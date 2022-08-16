@@ -16,8 +16,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
-            <img src={GreyJedi} className="App-GreyJedi" alt="GreyJedi" />
           </p>
+              <img src={GreyJedi} className="App-GreyJedi" alt="GreyJedi" />
           <a
             className="App-link"
             href="https://reactjs.org"
