@@ -4,7 +4,7 @@ import { SxProps } from "@mui/system";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import Typography from "../components/Typography";
+import Typography from "../components/Typography.tsx";
 import meditate from "./images/meditate.jpeg";
 import bog from "./images/DragonsnakeBog.jpeg";
 import dagobah from "./images/Dagobah.jpeg";

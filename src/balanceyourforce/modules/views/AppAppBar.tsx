@@ -1,8 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import AppBar from "../components/AppBar";
-import Toolbar from "../components/Toolbar";
+import AppBar from "../components/AppBar.tsx";
+import Toolbar from "../components/Toolbar.tsx";
 import { Link as RouterLink } from "react-router-dom";
 
 const rightLink = {

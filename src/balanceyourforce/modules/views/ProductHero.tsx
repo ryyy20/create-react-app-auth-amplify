@@ -1,7 +1,7 @@
 import * as React from "react";
-import Button from "../components/Button";
-import Typography from "../components/Typography";
-import ProductHeroLayout from "./ProductHeroLayout";
+import Button from "../components/Button.tsx";
+import Typography from "../components/Typography.tsx";
+import ProductHeroLayout from "./ProductHeroLayout.tsx";
 import { Link as RouterLink } from "react-router-dom";
 import force from "./images/force.jpg";
 import force2 from "./images/force2.jpg";

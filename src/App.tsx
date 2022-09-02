@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
-import Home from "./balanceyourforce/Home";
+import Home from "./balanceyourforce/Home.tsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Privacy from "./balanceyourforce/Privacy";
-import SignIn from "./balanceyourforce/SignIn";
-import SignUp from "./balanceyourforce/SignUp";
-import ForgotPassword from "./balanceyourforce/ForgotPassword";
-import Terms from "./balanceyourforce/Terms";
+import Privacy from "./balanceyourforce/Privacy.tsx";
+import SignIn from "./balanceyourforce/SignIn.tsx";
+// import SignUp from "./balanceyourforce/SignUp.tsx";
+import ForgotPassword from "./balanceyourforce/ForgotPassword.tsx";
+import Terms from "./balanceyourforce/Terms.tsx";
+import { withAuthenticator, AmplifySignOut, AmplifySignUp } from '@aws-amplify/ui-react'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <ForgotPassword />
           </Route>
           <Route path="/sign-up">
-            <SignUp />
+            <AmplifySignUp />
           </Route>
           <Route path="/sign-in">
             <SignIn />
@@ -37,4 +38,5 @@ function App() {
   );
 }
 
-export default App;
+// export default App;
+export default withAuthenticator(App);
