@@ -1,13 +1,33 @@
-import { Auth } from 'aws-amplify';
-import withRoot from './modules/withRoot.tsx'
-async function SignIn(username, password) {
-    try {
-        const user = await Auth.signIn(username, password);
-    } catch (error) {
-        console.log('error signing in', error);
-    }
+import { Amplify } from 'aws-amplify';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from '../aws-exports';
+Amplify.configure(awsExports);
+
+export default function App() {
+  return (
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <h1>Hello {user.username}</h1>
+          <button onClick={signOut}>Sign out</button>
+        </main>
+      )}
+    </Authenticator>
+  );
 }
-export default withRoot(SignIn);
+// import { Auth } from '@aws-amplify/ui-react';
+// import withRoot from './modules/withRoot.tsx'
+// async function SignIn(username, password) {
+//     try {
+//         const user = await Auth.signIn(username, password);
+//     } catch (error) {
+//         console.log('error signing in', error);
+//     }
+// }
+// export default withRoot(SignIn);
 // import * as React from "react";
 // import { Field, Form, FormSpy } from "react-final-form";
 // import Box from "@mui/material/Box";

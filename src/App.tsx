@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Privacy from "./balanceyourforce/Privacy.tsx";
 import SignIn from "./balanceyourforce/SignIn.tsx";
 // import SignUp from "./balanceyourforce/SignUp.tsx";
-import ForgotPassword from "./balanceyourforce/ForgotPassword.tsx";
+import ForgotPassword from './balanceyourforce/ForgotPassword.tsx';
 import Terms from "./balanceyourforce/Terms.tsx";
-import { withAuthenticator, AmplifySignOut, AmplifySignUp } from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
+import { SignUp } from "@aws-amplify/ui-react/dist/types/components/Authenticator/SignUp";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <ForgotPassword />
           </Route>
           <Route path="/sign-up">
-            <AmplifySignUp />
+            <SignIn />
           </Route>
           <Route path="/sign-in">
             <SignIn />

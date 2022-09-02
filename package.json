@@ -4,7 +4,7 @@
     "private": true,
     "dependencies": {
         "@aws-amplify/cli": "^9.2.1",
-        "@aws-amplify/ui-react": "^1.2.6",
+        "@aws-amplify/ui-react": "^3.5.0",
         "@emotion/react": "^11.10.4",
         "@emotion/styled": "^11.10.4",
         "@mui/icons-material": "^5.10.3",
@@ -16,6 +16,7 @@
         "@types/markdown-to-jsx": "^6.11.1",
         "@types/react-router-dom": "^5.1.5",
         "@types/validator": "^13.1.0",
+        "aws-amplify": "^4.3.34",
         "clsx": "^1.1.1",
         "final-form": "^4.20.1",
         "markdown-to-jsx": "^6.11.4",

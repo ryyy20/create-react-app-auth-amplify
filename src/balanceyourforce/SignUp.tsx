@@ -1,34 +1,22 @@
-import { Auth } from 'aws-amplify';
-import { Hub } from 'aws-amplify';
-async function signUp(username, password, email, phone_number) {
-    try {
-        const { user } = await Auth.signUp({
-            username,
-            password,
-            attributes: {
-                email,          // optional
-                phone_number,   // optional - E.164 number convention
-                // other custom attributes 
-            },
-            autoSignIn: { // optional - enables auto sign in after user is confirmed
-                enabled: true,
-            }
-        });
-        console.log(user);
-    } catch (error) {
-        console.log('error signing up:', error);
-    }
-}
-function listenToAutoSignInEvent() {
-  Hub.listen('auth', ({ payload }) => {
-      const { event } = payload;
-      if (event === 'autoSignIn') {
-          const user = payload.data;
-          // assign user
-      } else if (event === 'autoSignIn_failure') {
-          // redirect to sign in page
-      }
-  })
+import { Amplify } from 'aws-amplify';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from '../aws-exports';
+Amplify.configure(awsExports);
+
+export default function App() {
+  return (
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <h1>Hello {user.username}</h1>
+          <button onClick={signOut}>Sign out</button>
+        </main>
+      )}
+    </Authenticator>
+  );
 }
 // import * as React from "react";
 // import Box from "@mui/material/Box";
