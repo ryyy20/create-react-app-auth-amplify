@@ -12,7 +12,7 @@ export default function App() {
     <Authenticator>
       {({ signOut, user }) => (
         <main>
-          <h1>Hello {user.username}</h1> <p>Thank you for Visiting!</p>
+          <h1>Hello {user.username}</h1> <p>Thank you for Visiting!!!</p>
           <button onClick={signOut}>Sign out</button>
         </main>
       )}
