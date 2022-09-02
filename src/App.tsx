@@ -11,6 +11,12 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import { SignUp } from "@aws-amplify/ui-react/dist/types/components/Authenticator/SignUp";
 
 function App() {
+  const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
+
+const handleAuthStateChange = (authState: string) =>{
+    authState === 'signedIn' ? setLoggedIn(true) : setLoggedIn(false);
+    console.log('SIGNED OUT')
+  }
   return (
     <React.Fragment>
       <Router>
@@ -19,10 +25,10 @@ function App() {
             <ForgotPassword />
           </Route>
           <Route path="/sign-up">
-            <SignIn />
+          <SignIn/> {/**SET TO NEW 'coming soon page' */}
           </Route>
-          <Route path="/sign-in">
-            <SignIn />
+          <Route path="/sign-in" onStateChange={handleAuthStateChange}>
+            {loggedIn ? <Home/> : <SignIn/>}
           </Route>
           <Route path="/privacy">
             <Privacy />

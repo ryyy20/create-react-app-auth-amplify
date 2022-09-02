@@ -1,3 +1,4 @@
+import React from "react";
 import { Amplify } from 'aws-amplify';
 
 import { Authenticator } from '@aws-amplify/ui-react';
@@ -7,8 +8,17 @@ import awsExports from '../aws-exports';
 Amplify.configure(awsExports);
 
 export default function App() {
+    const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
+
+  // possible states: signIn | signedIn | signedOut
+  const handleAuthStateChange = (authState: string) =>{
+    authState === 'signedIn' ? setLoggedIn(true) : setLoggedIn(false);
+    console.log('SIGNED IN')
+  }
+    
+
   return (
-    <Authenticator>
+    <Authenticator onStateChange={handleAuthStateChange}>
       {({ signOut, user }) => (
         <main>
           <h1>Hello {user.username}</h1>
