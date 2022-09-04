@@ -13,20 +13,10 @@
     }
   },
   "storage": {
-    "balanceyourforceimgs": {
+    "s3balanaceyourforceuistorage9e173424": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "S3Triggerf2031726",
-          "attributes": [
-            "Name",
-            "Arn",
-            "LambdaExecutionRole"
-          ]
-        }
-      ]
+      "dependsOn": []
     }
   }
 }

@@ -12,27 +12,42 @@ import Typography from "../components/Typography.tsx";
 // import illum from "../../../../public/illum.jpeg";
 // import kyber from "../../../../public/kyber.jpeg";
 
-import { Amplify, Storage, Auth } from 'aws-amplify';
+// import { Amplify, Storage, Auth } from 'aws-amplify';
 import awsconfig from '../../../aws-exports';
-Auth.configure(awsconfig)
-Auth.configure({ mandatorySignIn: false});
-Amplify.configure(awsconfig);
-Storage.configure(awsconfig);
+// Auth.configure(awsconfig)
+// Auth.configure({ mandatorySignIn: false});
+// Amplify.configure(awsconfig);
+// Storage.configure(awsconfig);
+// import { Storage } from "@aws-amplify/storage"
 
- const meditate =  Storage.get('meditate.jpeg', {expires: 60})
+// await Storage.get('test.txt', { 
+//     level: 'public'
+// });
+// import { Storage } from "@aws-amplify/storage"
+
+// await Storage.get('test.txt', { 
+//     level: 'private'
+// });
+import { Storage } from "@aws-amplify/storage"
+Storage.configure(awsconfig);
+// await Storage.get('test.txt', { 
+//     level: 'public'
+// });
+
+ const meditate =  Storage.get('s3://balanace-your-force-ui-storage-9e17342403142-master/Dagobah.jpeg', {level:'private'})
  .then(result => console.log(result))
  .catch(err => console.log(err));
 console.log(Storage)
- const bog = Storage.get('bog.jpeg', {expires: 60})
+ const bog = Storage.get('bog.jpeg', {level:'private',expires: 60})
  .then(result => console.log(result))
  .catch(err => console.log(err));
- const dagobah = Storage.get('Dagobah.jpeg', {expires: 60})
+ const dagobah = Storage.get('Dagobah.jpeg', {level:'private',expires: 60})
  .then(result => console.log(result))
  .catch(err => console.log(err));
- const illum = Storage.get('illum.jpeg', {expires: 60})
+ const illum = Storage.get('illum.jpeg', {level:'private',expires: 60})
  .then(result => console.log(result))
  .catch(err => console.log(err));
- const kyber = Storage.get('kyber.jpeg', {expires: 60})
+ const kyber = Storage.get('kyber.jpeg', {level:'private',expires: 60})
  .then(result => console.log(result))
  .catch(err => console.log(err));
 

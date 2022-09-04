@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3balanaceyourforceuistorage9e173424",
+  "bucketName": "balanace-your-force-ui-storage-9e173424",
+  "policyUUID": "09ed34ba",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
