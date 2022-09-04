@@ -9,10 +9,6 @@ import { blue } from "@mui/material/colors";
 
 import { Amplify, Storage, Auth } from 'aws-amplify';
 import awsconfig from '../../../aws-exports';
-Auth.configure(awsconfig)
-Auth.configure({ mandatorySignIn: false});
-Amplify.configure(awsconfig);
-Storage.configure(awsconfig);
 
 //  const backgroundImage = Storage.get('force2.jpg', {expires: 60})
 //  .then(result => console.log('storage RESULT -->'+result))

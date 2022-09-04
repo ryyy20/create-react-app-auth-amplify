@@ -29,7 +29,7 @@ import awsconfig from '../../../aws-exports';
 //     level: 'private'
 // });
 import { Storage } from "@aws-amplify/storage"
-Storage.configure(awsconfig);
+// Storage.configure(awsconfig);
 // await Storage.get('test.txt', { 
 //     level: 'public'
 // });
