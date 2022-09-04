@@ -6,11 +6,11 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Typography from "../components/Typography.tsx";
 
-// import meditate from "./images/meditate.jpeg";
-// import bog from "./images/DragonsnakeBog.jpeg";
-// import dagobah from "./images/Dagobah.jpeg";
-// import illum from "./images/illum.jpeg";
-// import kyber from "./images/kyber.jpeg";
+// import meditate from "../../../../public/meditate.jpeg";
+// import bog from "../../../../public/DragonsnakeBog.jpeg";
+// import dagobah from "../../../../public/Dagobah.jpeg";
+// import illum from "../../../../public/illum.jpeg";
+// import kyber from "../../../../public/kyber.jpeg";
 
 import { Amplify, Storage } from 'aws-amplify';
 import awsconfig from '../../../aws-exports';//create-react-app-auth-amplify/src/aws-exports.js
@@ -20,18 +20,18 @@ Amplify.configure(awsconfig);
  .then(result => console.log(result))
  .catch(err => console.log(err));
 
- const bog = Storage.get('bog.jpeg', {expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const dagobah = Storage.get('dagobah.jpeg', {expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const illum = Storage.get('illum.jpeg', {expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const kyber = Storage.get('kyber.jpeg', {expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
+//  const bog = Storage.get('bog.jpeg', {expires: 60})
+//  .then(result => console.log(result))
+//  .catch(err => console.log(err));
+//  const dagobah = Storage.get('dagobah.jpeg', {expires: 60})
+//  .then(result => console.log(result))
+//  .catch(err => console.log(err));
+//  const illum = Storage.get('illum.jpeg', {expires: 60})
+//  .then(result => console.log(result))
+//  .catch(err => console.log(err));
+//  const kyber = Storage.get('kyber.jpeg', {expires: 60})
+//  .then(result => console.log(result))
+//  .catch(err => console.log(err));
 
 const item: SxProps<Theme> = {
   display: "flex",
@@ -59,7 +59,7 @@ function ProductValues() {
               <img></img>
               <Box
                 component="img"
-                src={meditate}
+                src={"/meditate.jpeg"}
                 alt="suitcase"
                 sx={{ width: 200 }}
                 
@@ -81,7 +81,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src={dagobah}
+                src={"/Dagobah.jpeg"}
                 alt="graph"
                 sx={{ width: 225 }}
               />
@@ -100,7 +100,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src={kyber}
+                src={"/kyber.jpeg"}
                 alt="clock"
                 sx={{ height: 125 }}
               />

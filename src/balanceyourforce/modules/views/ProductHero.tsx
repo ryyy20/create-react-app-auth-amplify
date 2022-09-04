@@ -4,7 +4,7 @@ import Typography from "../components/Typography.tsx";
 import ProductHeroLayout from "./ProductHeroLayout.tsx";
 import { Link as RouterLink } from "react-router-dom";
 import force from "./images/force.jpg";
-import force2 from "./images/force2.jpg";
+import force2 from "../../../../public/force2.jpg";
 import { blue } from "@mui/material/colors";
 
 import { Amplify, Storage } from 'aws-amplify';
@@ -14,18 +14,20 @@ import awsconfig from '../../../aws-exports';
 
 Amplify.configure(awsconfig);
 
- const backgroundImage = Storage.get('force2.jpg', {expires: 60})
- .then(result => console.log('storage RESULT -->'+result))
- .catch(err => console.log('ERRORORORO --> ' +err));
+//  const backgroundImage = Storage.get('force2.jpg', {expires: 60})
+//  .then(result => console.log('storage RESULT -->'+result))
+//  .catch(err => console.log('ERRORORORO --> ' +err));
 //  const backgroundImage =
-  //  "https://balanceyourforceimages.s3.amazonaws.com/force2.jpg";
+  //  "https://geekfitness.net/wp-content/uploads/2016/12/Obi-Wan-Kenobi-Jedi-Meditation-with-a-Fire-Concept-Art.jpg";
+  const backgroundImage = "https://geekfitness.net/wp-content/uploads/2016/12/Obi-Wan-Kenobi-Jedi-Meditation-with-a-Fire-Concept-Art.jpg";
+  //force2
 
 export default function ProductHero() {
   return (
     
     <ProductHeroLayout
       sxBackground={{
-        backgroundImage: `url${backgroundImage})`,
+        backgroundImage: `url(${backgroundImage})`,
        //backgroundColor: "#7fc7d9", // Average color of the background image.
         backgroundPosition: "center",
       }}
