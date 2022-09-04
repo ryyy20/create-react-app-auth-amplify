@@ -13,7 +13,7 @@
     }
   },
   "storage": {
-    "s3balanaceyourforceuistorage9e173424": {
+    "s3balanaceyourforceuistorageaec7b029": {
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": []

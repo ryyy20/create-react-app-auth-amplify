@@ -34,22 +34,6 @@ Storage.configure(awsconfig);
 //     level: 'public'
 // });
 
- const meditate =  Storage.get('s3://balanace-your-force-ui-storage-9e17342403142-master/Dagobah.jpeg', {level:'private'})
- .then(result => console.log(result))
- .catch(err => console.log(err));
-console.log(Storage)
- const bog = Storage.get('bog.jpeg', {level:'private',expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const dagobah = Storage.get('Dagobah.jpeg', {level:'private',expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const illum = Storage.get('illum.jpeg', {level:'private',expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
- const kyber = Storage.get('kyber.jpeg', {level:'private',expires: 60})
- .then(result => console.log(result))
- .catch(err => console.log(err));
 
 const item: SxProps<Theme> = {
   display: "flex",
@@ -57,8 +41,46 @@ const item: SxProps<Theme> = {
   alignItems: "center",
   px: 5,
 };
+var meditate;
+var bog;
+var dagobah;
+var illum;
+var kyber;
 
-function ProductValues() {
+ function ProductValues() {
+  
+  React.useEffect(() =>{
+    async function getpics() {
+     await getPictures()
+    }
+    getpics()
+  }, [])
+
+  async function getPictures(){
+     meditate = await Storage.get('meditate.jpeg')
+     .then(result => console.log(result))
+    .catch(err => console.log(err));
+   console.log(Storage)
+     bog = await Storage.get('bog.jpeg', {level:'private',expires: 60})
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+     dagobah = await Storage.get('Dagobah.jpeg', {level:'private',expires: 60})
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+     illum = await Storage.get('illum.jpeg', {level:'private',expires: 60})
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+     kyber = await Storage.get('kyber.jpeg', {level:'private',expires: 60})
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+
+    console.log("meditate --> ", meditate)
+    console.log("bog --> ", bog)
+    console.log("dagobah --> ", dagobah)
+    console.log("illum --> ", illum)
+    console.log("kyber --> ", kyber)
+   
+  }
   return (
     <Box
       component="section"
