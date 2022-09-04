@@ -1,4 +1,4 @@
-import * as React from "react";
+import React , { useState, useEffect } from "react";
 import { Theme } from "@mui/material/styles";
 import { SxProps } from "@mui/system";
 import Box from "@mui/material/Box";
@@ -34,6 +34,9 @@ import { Storage } from "@aws-amplify/storage"
 //     level: 'public'
 // });
 
+// impo
+
+
 
 const item: SxProps<Theme> = {
   display: "flex",
@@ -41,40 +44,60 @@ const item: SxProps<Theme> = {
   alignItems: "center",
   px: 5,
 };
-var meditate;
-var bog;
-var dagobah;
-var illum;
-var kyber;
 
  function ProductValues() {
-  
-  React.useEffect(() =>{
-    async function getpics() {
-     await getPictures()
-    }
-    getpics()
-  }, [])
+  const [meditate, setMeditate] = useState('')
+  const [bog, setBog] = useState('')
+  const [dagobah, setDagobah] = useState('')
+  const [illum, setIllum] = useState('')
+  const [kyber, setKyber] = useState('')
+  // var meditate;
+
+useEffect(() =>{
+  async function getpics() {
+   await getPictures()
+  }
+  getpics()
+}, [])
 
   async function getPictures(){
-     meditate = await Storage.get('meditate.jpeg')
-     .then(result => console.log(result))
+     await Storage.get('meditate.jpeg', {expires: 60})
+     .then(result => {
+      console.log(result) 
+      // meditate = result
+      setMeditate(result)
+    })
     .catch(err => console.log(err));
-   console.log(Storage)
-     bog = await Storage.get('bog.jpeg', {level:'private',expires: 60})
-    .then(result => console.log(result))
+    await Storage.get('bog.jpeg', {expires: 60})
+    .then(result =>  {
+      console.log(result) 
+      // bog = result
+      setBog(result)
+    })
     .catch(err => console.log(err));
-     dagobah = await Storage.get('Dagobah.jpeg', {level:'private',expires: 60})
-    .then(result => console.log(result))
+    await Storage.get('Dagobah.jpeg', {expires: 60})
+    .then(result =>  {
+      console.log(result) 
+      // dagobah = result
+      setDagobah(result)
+    })
     .catch(err => console.log(err));
-     illum = await Storage.get('illum.jpeg', {level:'private',expires: 60})
-    .then(result => console.log(result))
+    await  Storage.get('illum.jpeg', {expires: 60})
+    .then(result =>  {
+      console.log(result) 
+      // illum = result
+      setIllum(result)
+    })
     .catch(err => console.log(err));
-     kyber = await Storage.get('kyber.jpeg', {level:'private',expires: 60})
-    .then(result => console.log(result))
+    await  Storage.get('kyber.jpeg', {expires: 60})
+    .then(result => {
+      console.log(result) 
+      // kyber = result
+      setKyber(result)
+    })
     .catch(err => console.log(err));
 
-    console.log("meditate --> ", meditate)
+    console.log("meditate --> ",(meditate))
     console.log("bog --> ", bog)
     console.log("dagobah --> ", dagobah)
     console.log("illum --> ", illum)
@@ -82,6 +105,7 @@ var kyber;
    
   }
   return (
+    
     <Box
       component="section"
       sx={{ display: "flex", overflow: "hidden", bgcolor: "secondary.light" }}
@@ -95,14 +119,12 @@ var kyber;
         />
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
-            <Box sx={item}>
-              <img></img>
+            <Box sx={item}>            
               <Box
                 component="img"
                 src={meditate}
                 alt="suitcase"
                 sx={{ width: 200 }}
-                
               />
               <Typography variant="h6" sx={{ my: 5 }}>
                 Mediate with Jedi Masters
