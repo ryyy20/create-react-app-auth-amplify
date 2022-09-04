@@ -134,7 +134,7 @@ useEffect(() =>{
                   "Come for a meditation session with the best Jedi Masters in the galaxy."
                 }
                 {
-                  " Stay for as long as needed for the force to heal."
+                  " Stay for as long as you need for your life force to heal."
                 }
               </Typography>
             </Box>
@@ -152,7 +152,7 @@ useEffect(() =>{
               </Typography>
               <Typography variant="h5">
                 {
-                  "From the halls of the Jedi temple, to Yodas remote swamp on dagobah "
+                  "From the halls of the Jedi temple, to Yoda's remote swamp on Dagobah, "
                 }
                 {"you can choose your meditation chamber from popular Star Wars worlds."}
               </Typography>
