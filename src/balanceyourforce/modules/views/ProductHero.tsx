@@ -6,26 +6,36 @@ import { Link as RouterLink } from "react-router-dom";
 import force from "./images/force.jpg";
 import force2 from "./images/force2.jpg";
 import { blue } from "@mui/material/colors";
-const backgroundImage =
-force2;
-// const backgroundImage =
-//   "https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80";
+
+import { Amplify, Storage } from 'aws-amplify';
+import { AmplifyS3Image } from '@aws-amplify/ui-react/legacy';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
+ const backgroundImage = Storage.get('force2.jpg', {expires: 60})
+ .then(result => console.log('storage RESULT -->'+result))
+ .catch(err => console.log('ERRORORORO --> ' +err));
+//  const backgroundImage =
+  //  "https://balanceyourforceimages.s3.amazonaws.com/force2.jpg";
 
 export default function ProductHero() {
   return (
+    
     <ProductHeroLayout
       sxBackground={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url${backgroundImage})`,
        //backgroundColor: "#7fc7d9", // Average color of the background image.
         backgroundPosition: "center",
       }}
     >
       {/* Increase the network loading priority of the background image. */}
-      <img
+     <img
         style={{ display: "none" }}
         src={backgroundImage}
         alt="increase priority"
-      />
+      /> 
+      {/* <AmplifyS3Image imgKey="Dagobah.jpeg" />; */}
       <Typography color="inherit" align="center" variant="h2" marked="center">
         Balance your Force
       </Typography>

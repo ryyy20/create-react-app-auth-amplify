@@ -5,11 +5,34 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Typography from "../components/Typography.tsx";
-import meditate from "./images/meditate.jpeg";
-import bog from "./images/DragonsnakeBog.jpeg";
-import dagobah from "./images/Dagobah.jpeg";
-import illum from "./images/illum.jpeg";
-import kyber from "./images/kyber.jpeg";
+
+// import meditate from "./images/meditate.jpeg";
+// import bog from "./images/DragonsnakeBog.jpeg";
+// import dagobah from "./images/Dagobah.jpeg";
+// import illum from "./images/illum.jpeg";
+// import kyber from "./images/kyber.jpeg";
+
+import { Amplify, Storage } from 'aws-amplify';
+import awsconfig from './aws-exports.js';//create-react-app-auth-amplify/src/aws-exports.js
+Amplify.configure(awsconfig);
+
+ const meditate = Storage.get('meditate.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+
+ const bog = Storage.get('bog.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const dagobah = Storage.get('dagobah.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const illum = Storage.get('illum.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const kyber = Storage.get('kyber.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+
 const item: SxProps<Theme> = {
   display: "flex",
   flexDirection: "column",
@@ -33,11 +56,13 @@ function ProductValues() {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Box sx={item}>
+              <img></img>
               <Box
                 component="img"
                 src={meditate}
                 alt="suitcase"
                 sx={{ width: 200 }}
+                
               />
               <Typography variant="h6" sx={{ my: 5 }}>
                 Mediate with Jedi Masters

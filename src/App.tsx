@@ -9,6 +9,9 @@ import ForgotPassword from './balanceyourforce/ForgotPassword.tsx';
 import Terms from "./balanceyourforce/Terms.tsx";
 import { withAuthenticator } from '@aws-amplify/ui-react'
 import { SignUp } from "@aws-amplify/ui-react/dist/types/components/Authenticator/SignUp";
+import { Amplify, Storage } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState<boolean>(false);

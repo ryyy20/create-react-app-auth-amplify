@@ -4,10 +4,25 @@ export type AmplifyDependentResourcesAttributes = {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
+            "UserPoolArn": "string",
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
             "AppClientID": "string",
-            "AppClientSecret": "string"
+            "CreatedSNSRole": "string"
+        }
+    },
+    "function": {
+        "S3Triggerf2031726": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        }
+    },
+    "storage": {
+        "balanceyourforceimgs": {
+            "BucketName": "string",
+            "Region": "string"
         }
     }
 }

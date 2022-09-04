@@ -1,4 +1,28 @@
 {
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-createreactappautham-master-03142-authRole",
+      "UnauthRoleArn": "arn:aws:iam::798089399658:role/amplify-createreactappautham-master-03142-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::798089399658:role/amplify-createreactappautham-master-03142-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-createreactappautham-master-03142-deployment",
+      "UnauthRoleName": "amplify-createreactappautham-master-03142-unauthRole",
+      "StackName": "amplify-createreactappautham-master-03142",
+      "StackId": "arn:aws:cloudformation:us-east-1:798089399658:stack/amplify-createreactappautham-master-03142/c8ea4410-2b1f-11ed-9848-0edf0f13277b",
+      "AmplifyAppId": "d2s8v07shg1c9s"
+    },
+    "categories": {
+      "function": {
+        "S3Triggerf2031726": {
+          "deploymentBucketName": "amplify-createreactappautham-master-03142-deployment",
+          "s3Key": "amplify-builds/S3Triggerf2031726-63472f37456b6d79424d-build.zip"
+        }
+      },
+      "auth": {
+        "cognitocf0c6096": {}
+      }
+    }
+  },
   "devv": {
     "awscloudformation": {
       "AuthRoleName": "amplify-authcra-devv-01534-authRole",

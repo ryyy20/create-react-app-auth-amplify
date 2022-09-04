@@ -1,0 +1,14 @@
+{
+  "resourceName": "balanceyourforceimgs",
+  "policyUUID": "7d255aff",
+  "bucketName": "balanaceyourforceui10f5cb77f8dd4bb0826091677eb0",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Triggerf2031726",
+  "groupAccess": {}
+}
