@@ -13,7 +13,7 @@ import Typography from "../components/Typography.tsx";
 // import kyber from "./images/kyber.jpeg";
 
 import { Amplify, Storage } from 'aws-amplify';
-import awsconfig from './aws-exports.js';//create-react-app-auth-amplify/src/aws-exports.js
+import awsconfig from '../../../aws-exports';//create-react-app-auth-amplify/src/aws-exports.js
 Amplify.configure(awsconfig);
 
  const meditate = Storage.get('meditate.jpeg', {expires: 60})

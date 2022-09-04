@@ -9,7 +9,8 @@ import { blue } from "@mui/material/colors";
 
 import { Amplify, Storage } from 'aws-amplify';
 import { AmplifyS3Image } from '@aws-amplify/ui-react/legacy';
-import awsconfig from './aws-exports';
+import awsconfig from '../../../aws-exports';
+// import awsconfig from './aws-exports';
 
 Amplify.configure(awsconfig);
 
