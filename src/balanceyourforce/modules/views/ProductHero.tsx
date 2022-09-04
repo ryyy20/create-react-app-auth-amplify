@@ -7,12 +7,12 @@ import force from "./images/force.jpg";
 import force2 from "../../../../public/force2.jpg";
 import { blue } from "@mui/material/colors";
 
-import { Amplify, Storage } from 'aws-amplify';
-import { AmplifyS3Image } from '@aws-amplify/ui-react/legacy';
+import { Amplify, Storage, Auth } from 'aws-amplify';
 import awsconfig from '../../../aws-exports';
-// import awsconfig from './aws-exports';
-
+Auth.configure(awsconfig)
+Auth.configure({ mandatorySignIn: false});
 Amplify.configure(awsconfig);
+Storage.configure(awsconfig);
 
 //  const backgroundImage = Storage.get('force2.jpg', {expires: 60})
 //  .then(result => console.log('storage RESULT -->'+result))
@@ -34,7 +34,7 @@ export default function ProductHero() {
     >
       {/* Increase the network loading priority of the background image. */}
      <img
-        style={{ display: "none" }}
+        style={{ display: "none",width: 100 }}
         src={backgroundImage}
         alt="increase priority"
       /> 

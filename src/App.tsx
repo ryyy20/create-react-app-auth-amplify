@@ -12,6 +12,7 @@ import { SignUp } from "@aws-amplify/ui-react/dist/types/components/Authenticato
 import { Amplify, Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
+Storage.configure(awsconfig);
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState<boolean>(false);

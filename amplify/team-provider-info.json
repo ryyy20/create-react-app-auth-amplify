@@ -15,7 +15,7 @@
       "function": {
         "S3Triggerf2031726": {
           "deploymentBucketName": "amplify-createreactappautham-master-03142-deployment",
-          "s3Key": "amplify-builds/S3Triggerf2031726-63472f37456b6d79424d-build.zip"
+          "s3Key": "amplify-builds/S3Triggerf2031726-61473954583630483235-build.zip"
         }
       },
       "auth": {

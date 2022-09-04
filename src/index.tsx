@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from './App.tsx';
 import * as serviceWorker from "./serviceWorker";
-import { Amplify, Storage } from 'aws-amplify';
+import { Amplify, Storage, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
+Auth.configure(awsconfig)
+Auth.configure({ mandatorySignIn: false});
 Amplify.configure(awsconfig);
+Storage.configure(awsconfig);
 //src/App.tsx
 ReactDOM.render(
   <React.StrictMode>

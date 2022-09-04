@@ -12,26 +12,29 @@ import Typography from "../components/Typography.tsx";
 // import illum from "../../../../public/illum.jpeg";
 // import kyber from "../../../../public/kyber.jpeg";
 
-import { Amplify, Storage } from 'aws-amplify';
-import awsconfig from '../../../aws-exports';//create-react-app-auth-amplify/src/aws-exports.js
+import { Amplify, Storage, Auth } from 'aws-amplify';
+import awsconfig from '../../../aws-exports';
+Auth.configure(awsconfig)
+Auth.configure({ mandatorySignIn: false});
 Amplify.configure(awsconfig);
+Storage.configure(awsconfig);
 
- const meditate = Storage.get('meditate.jpeg', {expires: 60})
+ const meditate =  Storage.get('meditate.jpeg', {expires: 60})
  .then(result => console.log(result))
  .catch(err => console.log(err));
-
-//  const bog = Storage.get('bog.jpeg', {expires: 60})
-//  .then(result => console.log(result))
-//  .catch(err => console.log(err));
-//  const dagobah = Storage.get('dagobah.jpeg', {expires: 60})
-//  .then(result => console.log(result))
-//  .catch(err => console.log(err));
-//  const illum = Storage.get('illum.jpeg', {expires: 60})
-//  .then(result => console.log(result))
-//  .catch(err => console.log(err));
-//  const kyber = Storage.get('kyber.jpeg', {expires: 60})
-//  .then(result => console.log(result))
-//  .catch(err => console.log(err));
+console.log(Storage)
+ const bog = Storage.get('bog.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const dagobah = Storage.get('Dagobah.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const illum = Storage.get('illum.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
+ const kyber = Storage.get('kyber.jpeg', {expires: 60})
+ .then(result => console.log(result))
+ .catch(err => console.log(err));
 
 const item: SxProps<Theme> = {
   display: "flex",
@@ -59,7 +62,7 @@ function ProductValues() {
               <img></img>
               <Box
                 component="img"
-                src={"/meditate.jpeg"}
+                src={meditate}
                 alt="suitcase"
                 sx={{ width: 200 }}
                 
@@ -81,7 +84,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src={"/Dagobah.jpeg"}
+                src={dagobah}
                 alt="graph"
                 sx={{ width: 225 }}
               />
@@ -100,7 +103,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src={"/kyber.jpeg"}
+                src={kyber}
                 alt="clock"
                 sx={{ height: 125 }}
               />
@@ -108,8 +111,8 @@ function ProductValues() {
                 Customize your Lightsaber
               </Typography>
               <Typography variant="h5">
-                {"What Kyber crystal will you choose?"}
-                {"The Lightsaber is not functional other than to turn on and off. It is more a prop you are able to customize."}
+                {"What Kyber Crystal will you choose?"}
+                {" Choose your crystal and lightsaber hilt and build your personal lightsaber. Will you choose the powerful Light or will Darkness beckon?"}
               </Typography>
             </Box>
           </Grid>
