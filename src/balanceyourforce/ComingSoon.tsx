@@ -27,7 +27,7 @@ class ComingSoon extends React.Component {
         <div className="content">
           <div className="title-holder">
             <h1>Lightsaber Workbench and Meditation Chambers </h1>
-            <h2> are under construction soon. Please check back for more updates.</h2>
+            <h2> are under construction. Please check back for more updates.</h2>
           </div>
           {/* <a href="mailto:ryan.arnold@uconn.edu">
             <div className="cta">Send me an email.</div>
