@@ -171,7 +171,7 @@ useEffect(() =>{
               </Typography>
               <Typography variant="h5">
                 {"What Kyber Crystal will you choose?"}
-                {" Choose your crystal and lightsaber hilt and build your personal lightsaber. Will you choose the powerful Light or will Darkness beckon?"}
+                {" Choose your crystal and lightsaber hilt and build your personal lightsaber. Will you choose the powerful Light or does Darkness beckon?"}
               </Typography>
             </Box>
           </Grid>
