@@ -19,14 +19,14 @@ function AppAppBar() {
   const checkUserAuth = (authState: string) =>{
     Auth.currentAuthenticatedUser({
       bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-  }).then(user => {currentUser = user;loggedIn = true; console.log(user)})
+  }).then(user => {currentUser = user;loggedIn = true; })
   .catch(err => console.log(err));
     }
 
     function routeUser(): String{
       Auth.currentAuthenticatedUser({
         bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    }).then(user => {currentUser = user;loggedIn = true; console.log(user)})
+    }).then(user => {currentUser = user;loggedIn = true; })
     .catch(err => console.log(err));
     return loggedIn ? "/home" : "/sign-in/"
     }

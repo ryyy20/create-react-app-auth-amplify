@@ -32,6 +32,7 @@ class ComingSoon extends React.Component {
           {/* <a href="mailto:ryan.arnold@uconn.edu">
             <div className="cta">Send me an email.</div>
           </a> */}
+          
           <div className="logo">
             <a href="/">Return to Home Page</a>
           </div>

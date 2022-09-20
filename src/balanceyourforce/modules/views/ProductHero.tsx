@@ -1,4 +1,4 @@
-import * as React from "react";
+import React , { useState, useEffect } from "react";
 import Button from "../components/Button.tsx";
 import Typography from "../components/Typography.tsx";
 import ProductHeroLayout from "./ProductHeroLayout.tsx";
@@ -10,20 +10,31 @@ import { blue } from "@mui/material/colors";
 import { Amplify, Storage, Auth } from 'aws-amplify';
 import awsconfig from '../../../aws-exports';
 
-//  const backgroundImage = Storage.get('force2.jpg', {expires: 60})
-//  .then(result => console.log('storage RESULT -->'+result))
-//  .catch(err => console.log('ERRORORORO --> ' +err));
-//  const backgroundImage =
-  //  "https://geekfitness.net/wp-content/uploads/2016/12/Obi-Wan-Kenobi-Jedi-Meditation-with-a-Fire-Concept-Art.jpg";
-  const backgroundImage = "https://geekfitness.net/wp-content/uploads/2016/12/Obi-Wan-Kenobi-Jedi-Meditation-with-a-Fire-Concept-Art.jpg";
-  //force2
 
 export default function ProductHero() {
+  const [background, setBackground] = useState('')
+
+  useEffect(() =>{
+    async function getpics() {
+     await getPictures()
+    }
+    getpics()
+  }, [])
+  
+    async function getPictures(){
+       await Storage.get('obiwan.jpg', {expires: 60})
+       .then(result => {
+        // meditate = result
+        setBackground(result)
+      })
+      .catch(err => console.log(err));
+       
+    }
   return (
     
     <ProductHeroLayout
       sxBackground={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${background})`,
        //backgroundColor: "#7fc7d9", // Average color of the background image.
         backgroundPosition: "center",
       }}
@@ -31,7 +42,7 @@ export default function ProductHero() {
       {/* Increase the network loading priority of the background image. */}
      <img
         style={{ display: "none",width: 100 }}
-        src={backgroundImage}
+        src={background}
         alt="increase priority"
       /> 
       {/* <AmplifyS3Image imgKey="Dagobah.jpeg" />; */}

@@ -63,45 +63,39 @@ useEffect(() =>{
   async function getPictures(){
      await Storage.get('meditate.jpeg', {expires: 60})
      .then(result => {
-      console.log(result) 
+       
       // meditate = result
       setMeditate(result)
     })
     .catch(err => console.log(err));
     await Storage.get('bog.jpeg', {expires: 60})
     .then(result =>  {
-      console.log(result) 
+       
       // bog = result
       setBog(result)
     })
     .catch(err => console.log(err));
     await Storage.get('Dagobah.jpeg', {expires: 60})
     .then(result =>  {
-      console.log(result) 
+       
       // dagobah = result
       setDagobah(result)
     })
     .catch(err => console.log(err));
     await  Storage.get('illum.jpeg', {expires: 60})
     .then(result =>  {
-      console.log(result) 
+       
       // illum = result
       setIllum(result)
     })
     .catch(err => console.log(err));
     await  Storage.get('kyber.jpeg', {expires: 60})
     .then(result => {
-      console.log(result) 
+       
       // kyber = result
       setKyber(result)
     })
     .catch(err => console.log(err));
-
-    console.log("meditate --> ",(meditate))
-    console.log("bog --> ", bog)
-    console.log("dagobah --> ", dagobah)
-    console.log("illum --> ", illum)
-    console.log("kyber --> ", kyber)
    
   }
   return (
