@@ -121,7 +121,7 @@ useEffect(() =>{
                 sx={{ width: 200 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                Mediate with Jedi Masters
+                Meditate with Jedi Masters
               </Typography>
               <Typography variant="h5">
                 {
